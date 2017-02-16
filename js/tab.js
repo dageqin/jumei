@@ -50,10 +50,10 @@ function bannerTip(){
 }
 function overOut() {
     oDiv.onmouseover=function () {
-        clearInterval(timer);
         aLeft.style.display=aRight.style.display='block';
     };
     oDiv.onmouseout=function () {
+        clearInterval(timer);
         timer=setInterval(autoMove,2000);
         aLeft.style.display=aRight.style.display='none';
     };
@@ -81,8 +81,6 @@ function leftRight() {
 
 //选项卡
 
-console.log(contentUl);
-console.log(selectLi);
     for(var i=0;i<selectLi.length;i++){
         (function (index) {
             selectLi[index].onclick=function () {
