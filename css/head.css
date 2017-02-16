@@ -270,14 +270,20 @@ a{
     overflow: hidden;
     height: 2968px;
     margin:0 80px;
-
 }
 .content ul{
     width: 1110px;
     height: 2968px;
     margin: 0 auto;
-    /*display: none;*/
+    display: block;
 }
+/*.content ul:nth-of-type(1){
+    display: none;
+}
+.content ul:nth-of-type(2){
+    display: none;
+}*/
+
 .content ul li {
     float: left;
     width: 535px;
@@ -286,7 +292,7 @@ a{
 }
 .on{
     background: #cccccc;
-    display: block;
+    display: inline-block;
 }
 .show{
     display: block;

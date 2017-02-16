@@ -11,11 +11,16 @@ var aLi=oUl.getElementsByTagName('li');
 var aLeft=oDiv.getElementsByClassName('left')[0];
 var aRight=oDiv.getElementsByClassName('right')[0];
 var n=-1;
+var content=document.getElementById('content');
+var contentUl=content.getElementsByTagName('ul');
+var mainSelect=document.getElementById('mainSelect');
+var selectLi=mainSelect.getElementsByTagName('li');
+var timer=null;
 
 //1.图片渐隐渐现，2.焦点自动轮播，3.鼠标移入停止移出继续，4.点击焦点切换，5.点击a按钮切换
 
 clearInterval(timer);
-var timer=setInterval(autoMove,2000);
+timer=setInterval(autoMove,2000);
 overOut();
 handleChange();
 leftRight();
@@ -75,6 +80,21 @@ function leftRight() {
 }
 
 //选项卡
+
+console.log(contentUl);
+console.log(selectLi);
+    for(var i=0;i<selectLi.length;i++){
+        (function (index) {
+            selectLi[index].onclick=function () {
+                for(var j=0;j<selectLi.length;j++){
+                    selectLi[j].className='';
+                    contentUl[j].className='';
+                }
+                selectLi[index].className='on';
+                contentUl[index].className='show';
+            }
+        })(i);
+    }
 
 
 
